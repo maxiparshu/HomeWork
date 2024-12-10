@@ -1,21 +1,21 @@
 public class Book {
   private String title;
   private String author;
-  private String year;
-  private boolean isAvailable = true;
+  private Integer year;
+  private boolean isAvailable;
 
-  Book(String title, String author, String year, boolean isAvailable){
+  Book(String title, String author, Integer year, boolean isAvailable) {
     this.title = title;
     this.author = author;
     this.year = year;
     this.isAvailable = isAvailable;
   }
 
-  Book(String title, String author){
-
+  Book(String title, String author) {
     this.title = title;
     this.author = author;
-    this.year = "2024";
+    this.year = 2024;
+    this.isAvailable = true;
   }
 
   public String getTitle() {
@@ -34,11 +34,11 @@ public class Book {
     this.author = author;
   }
 
-  public String getYear() {
+  public Integer getYear() {
     return year;
   }
 
-  public void setYear(String year) {
+  public void setYear(Integer year) {
     this.year = year;
   }
 
@@ -50,13 +50,15 @@ public class Book {
     isAvailable = available;
   }
 
-  void borrowBook(){
-    if (isAvailable)
+  public void borrowBook() {
+    if (isAvailable) {
       isAvailable = false;
-    else
+    } else {
       System.out.println("Book is borrowed already");
+    }
   }
-  void returnBook(){
+
+  public void returnBook() {
     isAvailable = true;
   }
 

@@ -13,7 +13,7 @@ public class Main {
   public static void main(String[] args) {
     var library = new Library();
     var firstBook = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling");
-    var secondBook = new Book("The Green Mile", "Stephen King", "1996", false);
+    var secondBook = new Book("The Green Mile", "Stephen King", 1996, false);
     var author = "J. K. Rowling";
     library.printAvailableBooks();
     printBooksByAuthor(library.findBooksByAuthor(author), author);
@@ -23,10 +23,10 @@ public class Main {
     library.addBook(secondBook);
     library.printAvailableBooks();
     printBooksByAuthor(library.findBooksByAuthor(author), author);
-    System.out.println();
 
-    library.findBookByTitle("The Hobbit").borrowBook();
-    library.findBookByTitle("The Green Mile").returnBook();
+    System.out.println();
+    library.findBookByTitle("The Hobbit").ifPresent(Book::borrowBook);
+    library.findBookByTitle("The Green Mile").ifPresent(Book::returnBook);
     library.printAvailableBooks();
   }
 }
