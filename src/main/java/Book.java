@@ -2,9 +2,9 @@ public class Book {
   private String title;
   private String author;
   private Integer year;
-  private boolean isAvailable;
+  private Boolean isAvailable;
 
-  Book(String title, String author, Integer year, boolean isAvailable) {
+  Book(String title, String author, Integer year, Boolean isAvailable) {
     this.title = title;
     this.author = author;
     this.year = year;
@@ -42,11 +42,11 @@ public class Book {
     this.year = year;
   }
 
-  public boolean isAvailable() {
+  public Boolean isAvailable() {
     return isAvailable;
   }
 
-  public void setAvailable(boolean available) {
+  public void setAvailable(Boolean available) {
     isAvailable = available;
   }
 

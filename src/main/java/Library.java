@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 public class Library {
   static Book[] books;// ArrayList
-  static int size;
+  static Integer size;
 
   static {
     size = 3;
